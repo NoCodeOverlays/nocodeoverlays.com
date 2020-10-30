@@ -1,17 +1,17 @@
-import { useState } from "react";
-import Head from "next/head";
-import Link from "next/link";
+import { useState } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import styles from "../stylesheets/pages.module.scss";
+import styles from '../stylesheets/pages.module.scss';
 
 const getCountdownText = () => {
-  const launchDate = new Date("October 31, 2020 21:00:00").getTime();
+  const launchDate = new Date('October 31, 2020 21:00:00').getTime();
   const now = new Date().getTime();
   const difference = launchDate - now;
 
   const days = Math.floor(difference / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
   const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((difference % (1000 * 60)) / 1000);
@@ -53,6 +53,11 @@ const HomePage = () => {
                       <a>read the blog</a>
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/apply">
+                      <a>apply for alpha</a>
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -69,7 +74,7 @@ const HomePage = () => {
           </main>
         </div>
         <footer>
-          Made by{" "}
+          Made by{' '}
           <a href="https://twitter.com/ashleemboyer" target="_blank">
             Ashlee M Boyer
           </a>
