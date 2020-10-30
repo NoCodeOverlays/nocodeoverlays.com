@@ -9,6 +9,7 @@ const ThanksPage = () => (
       }}
     >
       <img
+        alt="Site logo."
         src="/nco-logo-round.png"
         width="100"
         height="100"
