@@ -111,10 +111,11 @@
         font-size: 96px;
         max-width: 500px;
         line-height: 100%;
+        text-shadow: -48px 20px rgba(gray, 0.1);
       }
 
       & > div {
-        margin-top: 32px;
+        margin-top: 48px;
         margin-left: 100px;
 
         & > div:not(:last-child) {
@@ -152,6 +153,7 @@
           font-size: 48px;
           margin-bottom: 16px;
           line-height: 110%;
+          text-shadow: 48px -20px rgba($purple, 0.06);
         }
 
         p {
@@ -173,7 +175,13 @@
   @media screen and (max-width: 1500px) {
     & > div:first-child {
       & > div:first-child {
+        height: fit-content;
         padding-left: 120px;
+        overflow-y: visible;
+      }
+
+      & > div:last-child {
+        overflow-y: visible;
       }
     }
   }
@@ -260,6 +268,8 @@
 
         & > div {
           width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
         }
       }
     }
