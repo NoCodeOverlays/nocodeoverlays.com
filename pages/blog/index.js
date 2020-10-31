@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { firebaseAPI } from '../lib/firebase';
-import styles from '../stylesheets/pages.module.scss';
+import { firebaseAPI } from '../../lib/firebase';
+import styles from '../../stylesheets/pages.module.scss';
 
 const getPrettyDate = (dateTime) => {
   const asDate = new Date(dateTime);
@@ -19,7 +19,11 @@ const BlogPage = ({ posts }) => (
     </Head>
     <div>
       <div>
-        <h1>No-Code Overlays</h1>
+        <Link href="/">
+          <a>
+            <h1>No-Code Overlays</h1>
+          </a>
+        </Link>
         <p>
           Empowering anyone to create interactive streaming overlays without
           learning how to code.
@@ -28,7 +32,11 @@ const BlogPage = ({ posts }) => (
         <div>
           {posts.map((post) => (
             <div>
-              <h3>{post.title}</h3>
+              <Link href={`/blog/${post.slug}`}>
+                <a>
+                  <h3>{post.title}</h3>
+                </a>
+              </Link>
               <p>{getPrettyDate(post.created_at)}</p>
             </div>
           ))}
@@ -47,37 +55,10 @@ const BlogPage = ({ posts }) => (
       </div>
     </div>
   </div>
-  // <div className={styles.Blog}>
-  //   <header>
-  //     <h1>
-  //       <Link href="/">
-  //         <a>No-Code Overlays</a>
-  //       </Link>{' '}
-  //       &mdash; The Blog
-  //     </h1>
-  //     <p>
-  //       Empowering anyone to create interactive streaming overlays without
-  //       learning how to code.
-  //     </p>
-  //   </header>
-  //   <main>
-  //     {posts.map((post) => (
-  //       <article>
-  //         <div>
-  //           <h2>{post.title}</h2>
-  //           <p>
-  //             <em>Published {getPrettyDate(post.created_at)}</em>
-  //           </p>
-  //         </div>
-  //         <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-  //       </article>
-  //     ))}
-  //   </main>
-  // </div>
 );
 
 export const getStaticProps = async () => {
-  const posts = (await firebaseAPI('getBlogPosts')) || [];
+  const posts = (await firebaseAPI('getPosts')) || [];
 
   console.log(posts);
 
