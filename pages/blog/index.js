@@ -49,8 +49,17 @@ const BlogPage = ({ posts }) => (
             If you'd like to get updates on features and releases right in your
             email box, subscribe to the newsletter!
           </p>
-          <input type="email" />
-          <button>Subscribe</button>
+          <form name="nco-newsletter" method="POST" data-netlify="true">
+            <input type="email" />
+            <button
+              type="submit"
+              onClick={() => {
+                alert('Woo hoo! 🎉 Thanks for subscribing to the newsletter.');
+              }}
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </div>
