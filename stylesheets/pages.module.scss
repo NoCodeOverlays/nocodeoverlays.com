@@ -1,143 +1,82 @@
+@import 'variables';
+
 .Home {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url('/nco-background-purple.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba($purple, 0.8);
 
-  & > div {
+  div {
     width: 100%;
-    height: 100%;
+    max-width: 424px;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    padding: 54px 36px;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(black, 0.9);
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 24px;
+      line-height: 110%;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 48px;
+      line-height: 140%;
+    }
+
+    a {
+      display: block;
+      width: fit-content;
+      padding: 12px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 100%;
+      border-radius: 4vh;
+      background-color: $pink;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 24px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 
-    & > div {
-      height: 500px;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
+    div {
+      position: relative;
+      bottom: auto;
+      left: auto;
+    }
+  }
 
-      header {
-        width: 45%;
-        text-align: left;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 100px;
+  @media screen and (max-width: 450px) {
+    div {
+      padding: 40px 28px;
 
-        a {
-          text-decoration: none;
-
-          h1 {
-            margin-bottom: 8px;
-            color: black;
-          }
-        }
-
-        p {
-          max-width: 300px;
-          margin-bottom: 20px;
-          font-size: 1.1rem;
-          line-height: 1.4rem;
-        }
-
-        nav {
-          ul {
-            list-style: none;
-
-            li {
-              display: block;
-              margin-bottom: 8px;
-
-              a {
-                text-decoration: underline;
-                color: black;
-                cursor: pointer;
-                font-weight: bold;
-              }
-            }
-          }
-        }
+      h1 {
+        font-size: 48px;
       }
 
-      main {
-        width: 50%;
-        min-width: 260px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & > div {
-          padding: 24px 16px;
-          background-color: #ffff72;
-          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.4),
-            0px 2px 8px rgba(33, 33, 33, 0.1);
-          transform: rotate(-3deg);
-        }
-
-        h2 {
-          font-size: 2.4rem;
-          margin-bottom: 4px;
-        }
-
-        p {
-          width: 100%;
-          font-size: 1.4rem;
-        }
-
-        p:nth-child(3) {
-          margin-top: 32px;
-          font-size: 2.4rem;
-        }
-
-        p:last-child {
-          margin-top: 72px;
-          font-size: 1rem;
-        }
+      p {
+        font-size: 16px;
       }
 
-      @media (max-width: 830px) {
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        margin-bottom: 72px;
-
-        header {
-          width: 100%;
-          margin-bottom: 8vh;
-          margin-right: 0px;
-
-          a {
-            h1 {
-              font-size: 1.8rem;
-            }
-          }
-        }
-
-        main {
-          width: 100%;
-
-          h2 {
-            font-size: 1.8rem;
-          }
-
-          p {
-            font-size: 1.4rem;
-          }
-
-          p:nth-child(3) {
-            margin-top: 24px;
-            font-size: 2rem;
-          }
-
-          p:last-child {
-            margin-top: 48px;
-            font-size: 1rem;
-          }
-        }
+      button {
+        font-size: 16px;
       }
     }
   }
