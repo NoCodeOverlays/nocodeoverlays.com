@@ -44,6 +44,7 @@ const PostPage = ({ post }) => (
             email box, subscribe to the newsletter!
           </p>
           <form name="nco-newsletter" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="alpha-application" />
             <input type="email" />
             <button
               type="submit"
