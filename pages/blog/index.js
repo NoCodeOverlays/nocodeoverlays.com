@@ -67,9 +67,7 @@ const BlogPage = ({ posts }) => (
 );
 
 export const getStaticProps = async () => {
-  const posts = (await firebaseAPI('getPosts')) || [];
-
-  console.log(posts);
+  const posts = await firebaseAPI('getPosts');
 
   return { props: { posts } };
 };
